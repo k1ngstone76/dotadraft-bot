@@ -82,6 +82,9 @@ def api_call(move: int, body=None):
 
 # Преобразует имя героя в ID
 def hero2id(hero_name: str) -> int:
+    if hero_name.lower() == "nyx":
+        hero_name = "Nyx Assassin"
+
     if hero_name.lower() in HEROES_BY_NAME.keys():
         res = int(HEROES_BY_NAME[hero_name.lower()])
     else:
